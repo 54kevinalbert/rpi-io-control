@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/socket.io/socket.io.js"></script>
+    <meta name="viewport" content="width=438, user-scalable=no">
+  </head>
+  <body>
+    <div id="main">
+      <h2>io control</h2>
+      <script type="text/javascript">
+        var _pins = [
+          [ 3,  0  ],
+          [ 5,  1  ],
+          [ 7,  4  ],
+          [ 8,  14 ],
+          [ 10, 15 ],
+          [ 11, 17 ],
+          [ 12, 18 ],
+          [ 13, 21 ],
+          [ 15, 22 ],
+          [ 16, 23 ],
+          [ 18, 24 ],
+          [ 19, 10 ],
+          [ 21, 9  ],
+          [ 22, 25 ],
+          [ 23, 11 ],
+          [ 24, 8  ],
+          [ 26, 7  ]
+        ]
+        var _i = -1;
+        _pins.forEach(function(pin) {
+          document.write('<div class="row" id="' + pin[0] + '"><div class="index">' + pin[0] + '</div><div class="gpio">GPIO: [' + pin[1] + ']</div>' + 
+            '<div class="type"><select name="mode"><option value="none" selected="true">none</option><option value="read">read</option>' +
+            '<option value="write">write</option><option value="pwm">pwm</option></select></div>' +
+            '<div class="unused info"></div>' +
+            '<div class="read info" style="display:none"></div>' +
+            '<div class="write info" style="display:none"></div>' +
+            '<div class="pwm info" style="display:none"><input type="range" name="pwmValue" min="0" max="1000" value="0"></input></div>' +
+            '<div class="val"></div>' +
+            '<br class="clear" /></div>')
+        })
+        document.write('<br class="clear">')
+      </script>
+    </div>
+    <script id="jquery" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="/client.js"></script>
+  </body>
+</html>
