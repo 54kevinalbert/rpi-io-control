@@ -5,7 +5,8 @@
   "author": "Kevin Albert <54.kevinalbert@gmail.com>",
   "dependencies": {
     "socket.io": ">=0.9.1",
-    "rpi-gpio": ">=0.0.4"
+    "rpi-gpio": ">=0.0.4",
+    "mcp3008.js": "0.2.0"
   },
   "engine": "node >= 0.9.0"
 }
